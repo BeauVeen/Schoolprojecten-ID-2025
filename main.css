@@ -1,0 +1,23 @@
+h1 {
+    color: blue;
+    font-family: verdana;
+    font-size: 300%;
+    border: 2px;
+    margin: 50px;
+}
+
+p {
+    color: red;
+    font-family: courier;
+    font-size: 160%;
+    border: 5px;
+    margin: 75px;
+}
+
+dl {
+    color: red;
+    font-family: courier;
+    font-size: 160%;
+    border: 5px;
+    margin: 75px;
+}
