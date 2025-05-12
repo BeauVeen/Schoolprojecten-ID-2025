@@ -35,8 +35,18 @@ document.addEventListener("DOMContentLoaded", async function () {
             const pre = document.createElement('pre');
             pre.innerText = content;
 
+            const img = document.createElement('img');
+            const baseFileName = filePath.split('/').pop().replace('.txt', '');
+            img.src = `images/${baseFileName}.jpg`;
+            img.alt = `${baseFileName} Picture`;
+            img.style.width = '100%';
+            img.style.maxWidth = '400px';
+            img.style.display = 'block';
+            img.style.marginTop = '1em';
+
             container.appendChild(header);
             container.appendChild(pre);
+            container.appendChild(img);
 
             document.getElementById('text-content').appendChild(container);
             } catch (error) {
