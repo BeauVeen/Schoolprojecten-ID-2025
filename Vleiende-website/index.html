@@ -9,9 +9,16 @@
 
 <body>
     <header class="header">
-        <h1 class="title">Interface Development</h1>
-        <div onClick="changeColor()" style="cursor: pointer;">
-            <img id="themeIcon" src="images/light-theme.png" alt="Change theme" width="32" height="32">
+        <h1 class="title">Website Naam</h1>
+
+        <div class="icon-wrapper">
+            <div onClick="startColorTransition()" style="cursor: pointer;">
+                <img id="rgbIcon" src="images/rgb.png" alt="RGB mode" width="32" height="32">
+            </div>
+
+            <div onClick="changeColor()" style="cursor: pointer;">
+                <img id="themeIcon" src="images/light-theme.png" alt="Change theme" width="32" height="32">
+            </div>
         </div>
     </header>
 

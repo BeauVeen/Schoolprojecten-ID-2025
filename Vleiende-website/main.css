@@ -1,11 +1,43 @@
-/* Header */
-.header{
+/* ----- Base styles ----- */
+
+body {
+    background-color: white;
+    color: black;
+    font-family: 'Roboto', sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.rgb-transition {
+    transition: background-color 1s ease;
+}
+
+pre {
+    background-color: white;
+    color: inherit;
+    font-family: 'Roboto', sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+    margin: 0;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    overflow: hidden;
+}
+
+/* ----- Header ----- */
+
+.header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 16px 24px;
     background-color: #f5f5f5;
     border-bottom: 1px solid #ccc;
+}
+
+.icon-wrapper {
+    display: flex;
+    gap: 10px;
 }
 
 .title {
@@ -18,23 +50,53 @@
     cursor: pointer;
 }
 
-/* Theme switch */
-body {
-    background-color: white;
-    color: black;
-    font-family: 'Roboto', sans-serif;
-    transition: background-color 0.3s, color 0.3s;
-}
+/* ----- Tile container ----- */
 
-pre {
-    background-color: white;
+.tile-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    padding: 24px;
     color: inherit;
-    font-family: 'Roboto', sans-serif;
-    transition: background-color 0.3s, color 0.3s;
+    background: none;
+    white-space: pre-wrap;
     word-wrap: break-word;
     overflow-wrap: break-word;
     overflow: hidden;
+    transition: background-color 0.3s, color 0.3s;
 }
+
+.tile-container > div {
+    background-color: #ffffff;
+    color: inherit;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    transition: transform 0.2s, box-shadow 0.2s, background-color 0.3s, color 0.3s;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    align-self: start;
+}
+
+.tile-container > div:hover {
+    transform: translate(-4px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.tile-container > div h2 {
+    margin: 0;
+    margin-bottom: 14px;
+    color: inherit;
+}
+
+.tile-container > div pre {
+    margin: 8px 0 0 0;
+    transition: background-color 0.3s, color 0.3s;
+    color: inherit;
+}
+
+/* ----- Dark theme ----- */
 
 .dark-theme {
     background-color: #121212;
@@ -46,61 +108,34 @@ pre {
     color: white;
 }
 
-/* Container cards */
-.tile-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 24px;
-    padding: 24px;
-    color: inherit;
-    background: none;
-    font-family: inherit;
-    white-space: pre-wrap;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    overflow: hidden;
-}
-
-.tile-container pre {
-    white-space: pre-wrap;
-    word-wrap: break-word;
-    word-break: break-word;
-    overflow-wrap: break-word;
-    margin: 0;
-    background-color: inherit;
-    color: inherit;
-}
-
-.tile-container > div {
-    background-color: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    padding: 16px;
-    transition: transform 0.2s, box-shadow 0.2s, background-color 0.3s, color 0.3s;
-    width: 100%;
-    height: auto;
-    overflow: hidden;
-    box-sizing: border-box;
-}
-
-.tile-container > div:hover {
-    transform: translate(-4px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
-}
-
-body.dark-theme .tile-container > div {
+.dark-theme pre {
     background-color: #1e1e1e;
+    color: white;
+}
+
+.dark-theme .tile-container > div {
+    background-color:#1e1e1e;
+    color: white;
+}
+
+.dark-theme .tile-container > div:hover {
+    background-color: #444444;
+}
+
+.dark-theme .tile-container > div h2 {
     color: inherit;
-    background: #1e1e1e
 }
 
-.tile-container > div,
-.tile-container > div h2,
-.tile-container > div pre {
-    transition: background-color 0.3s, color 0.3s;
+.dark-theme .tile-container > div pre {
+    background-color: #1e1e1e;
+    color: white;
 }
 
-.tile-container > div h2 {
-    margin-top: 0;
-    margin-bottom: 14px;
+.dark-theme .tile-container > div:hover {
+    background-color: #444444;
+}
+
+.dark-theme .tile-container > div:hover pre {
+    background-color: #444444;
+    color: white;
 }
