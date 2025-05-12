@@ -35,17 +35,13 @@ pre {
     overflow-wrap: break-word;
     overflow: hidden;
 }
-body.dark-theme pre{
-    background-color: #1e1e1e;
-    color: inherit;
-}
 
-body.dark-theme {
+.dark-theme {
     background-color: #121212;
     color: white;
 }
 
-body.dark-theme .header {
+.dark-theme .header {
     background-color: black;
     color: white;
 }
