@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MatrixApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+67b4f27d2f309040a24870dda6861f65b319be27")]
 [assembly: System.Reflection.AssemblyProductAttribute("MatrixApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MatrixApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

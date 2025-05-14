@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Programmeren\\MatrixApi\\MatrixApi\\MatrixApi.csproj": {}
+    "C:\\Programming\\Schoolprojecten-ID-2025\\MatrixApi\\MatrixApi\\MatrixApi.csproj": {}
   },
   "projects": {
-    "C:\\Programmeren\\MatrixApi\\MatrixApi\\MatrixApi.csproj": {
+    "C:\\Programming\\Schoolprojecten-ID-2025\\MatrixApi\\MatrixApi\\MatrixApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Programmeren\\MatrixApi\\MatrixApi\\MatrixApi.csproj",
+        "projectUniqueName": "C:\\Programming\\Schoolprojecten-ID-2025\\MatrixApi\\MatrixApi\\MatrixApi.csproj",
         "projectName": "MatrixApi",
-        "projectPath": "C:\\Programmeren\\MatrixApi\\MatrixApi\\MatrixApi.csproj",
+        "projectPath": "C:\\Programming\\Schoolprojecten-ID-2025\\MatrixApi\\MatrixApi\\MatrixApi.csproj",
         "packagesPath": "C:\\Users\\beauv\\.nuget\\packages\\",
-        "outputPath": "C:\\Programmeren\\MatrixApi\\MatrixApi\\obj\\",
+        "outputPath": "C:\\Programming\\Schoolprojecten-ID-2025\\MatrixApi\\MatrixApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
