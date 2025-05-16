@@ -1,31 +1,69 @@
-# Visual Studio files
-.vs/
-
-# Build output
+# Visual Studio / .NET standaard ignores
 bin/
 obj/
-
-# User-specific files
+.vs/
 *.user
 *.suo
 *.userosscache
 *.sln.docstates
 
-# Rider IDE files (optioneel)
+# Build output
+*.dll
+*.exe
+*.pdb
+*.app
+
+# Rider IDE
 .idea/
 
 # NuGet packages
 *.nupkg
 packages/
 
-# Logs
+# ASP.NET Core runtime files
+*.db
 *.log
 
-# DotEnv files
-.env
+# EF Core migrations / local database
+Migrations/
+*.db
+
+# User-specific files
+*.rsuser
+*.psess
+*.vsp
 
 # Publish output
 publish/
 
-# Others
-*.DS_Store
+# Dotnet watch temp files
+.dotnetwatch/
+
+# npm packages & build
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Logs
+*.log
+
+# Ignore wwwroot/lib except custom files if any
+**/wwwroot/lib/
+
+# Ignore appsettings secrets, if any
+appsettings.*.json
+
+# Ignore JetBrains Rider files
+.idea/
+
+# Ignore Resharper files
+_ReSharper*/
+
+# Ignore coverage reports
+coverage/
+*.coverage
+*.coveragexml
+
+# Ignore other system files
+.DS_Store
+Thumbs.db
