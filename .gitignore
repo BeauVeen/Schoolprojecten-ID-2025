@@ -1,0 +1,31 @@
+# Visual Studio files
+.vs/
+
+# Build output
+bin/
+obj/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Rider IDE files (optioneel)
+.idea/
+
+# NuGet packages
+*.nupkg
+packages/
+
+# Logs
+*.log
+
+# DotEnv files
+.env
+
+# Publish output
+publish/
+
+# Others
+*.DS_Store
