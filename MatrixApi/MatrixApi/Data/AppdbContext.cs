@@ -41,6 +41,12 @@ namespace MatrixApi.Data
                 .HasOne(br => br.Product)
                 .WithMany(p => p.Bestelregels)
                 .HasForeignKey(br => br.ProductId);
+
+            modelBuilder.Entity<Bestelling>().HasKey(b => b.BestelId);
+            modelBuilder.Entity<Gebruiker>().HasKey(g => g.UserId);
+            modelBuilder.Entity<Categorie>().HasKey(c => c.CategorieId);
+            modelBuilder.Entity<Product>().HasKey(p => p.ProductId);
+            modelBuilder.Entity<Bestelregel>().HasKey(br => br.BestelregelId);
         }
     }
 }

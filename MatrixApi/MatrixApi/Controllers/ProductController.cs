@@ -44,7 +44,7 @@ namespace MatrixApi.Controllers
         [HttpPut("{id}")]
         public async Task<ActionResult> Update(int id, Product product)
         {
-            if (id != product.ProductId) 
+            if (id != product.ProductId)
                 return BadRequest();
 
             _context.Entry(product).State = EntityState.Modified;
@@ -55,12 +55,11 @@ namespace MatrixApi.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!ProductExists(id))
+                if (!_context.Producten.Any(e => e.ProductId == id))
                     return NotFound();
                 else
                     throw;
             }
-
             return NoContent();
         }
 
@@ -75,11 +74,6 @@ namespace MatrixApi.Controllers
             await _context.SaveChangesAsync();
 
             return NoContent(); 
-        }
-
-        private bool ProductExists (int id)
-        {
-            return _context.Producten.Any(e => e.ProductId == id);
         }
     }
 }

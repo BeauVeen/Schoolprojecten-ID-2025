@@ -1,47 +1,47 @@
 USE matrixdb;
 
 CREATE TABLE Gebruiker (
-    user_id INT AUTO_INCREMENT PRIMARY KEY,
-    wachtwoord CHAR(60) NOT NULL,
-    actief BOOLEAN NOT NULL DEFAULT TRUE,
-    naam VARCHAR(100) NOT NULL,
-    adres VARCHAR(255),
-    postcode VARCHAR(20),
-    woonplaats VARCHAR(100),
-    telefoon VARCHAR(20),
-    email VARCHAR(100)
+    UserId INT AUTO_INCREMENT PRIMARY KEY,
+    Wachtwoord CHAR(60) NOT NULL,
+    Actief BOOLEAN NOT NULL DEFAULT TRUE,
+    Naam VARCHAR(100) NOT NULL,
+    Adres VARCHAR(255),
+    Postcode VARCHAR(20),
+    Woonplaats VARCHAR(100),
+    Telefoon VARCHAR(20),
+    Email VARCHAR(100)
 );
 
 CREATE TABLE Categorie (
-    categorie_id INT AUTO_INCREMENT PRIMARY KEY,
-    categorie_naam VARCHAR(100) NOT NULL
+    CategorieId INT AUTO_INCREMENT PRIMARY KEY,
+    CategorieNaam VARCHAR(100) NOT NULL
 );
 
 CREATE TABLE Producten (
-    product_id INT AUTO_INCREMENT PRIMARY KEY,
-    categorie_id INT,
-    naam VARCHAR(100) NOT NULL,
-    beschrijving VARCHAR(255),
-    prijs DECIMAL(10,2) NOT NULL,
-    voorraad INT NOT NULL DEFAULT 0,
-    afbeelding BLOB,
-    FOREIGN KEY (categorie_id) REFERENCES Categorie(categorie_id)
+    ProductId INT AUTO_INCREMENT PRIMARY KEY,
+    CategorieId INT,
+    Naam VARCHAR(100) NOT NULL,
+    Beschrijving VARCHAR(255),
+    Prijs DECIMAL(10,2) NOT NULL,
+    Voorraad INT NOT NULL DEFAULT 0,
+    Afbeelding BLOB,
+    FOREIGN KEY (CategorieId) REFERENCES Categorie(CategorieId)
 );
 
 CREATE TABLE Bestelling (
-    bestel_id INT AUTO_INCREMENT PRIMARY KEY,
-    user_id INT NOT NULL,
-    datum DATE NOT NULL,
-    status VARCHAR(50) NOT NULL,
-    FOREIGN KEY (user_id) REFERENCES Gebruiker(user_id)
+    BestelId INT AUTO_INCREMENT PRIMARY KEY,
+    UserId INT NOT NULL,
+    Datum DATE NOT NULL,
+    Status VARCHAR(50) NOT NULL,
+    FOREIGN KEY (UserId) REFERENCES Gebruiker(UserId)
 );
 
 CREATE TABLE Bestelregel (
-    bestelregel_id INT AUTO_INCREMENT PRIMARY KEY,
-    bestel_id INT NOT NULL,
-    product_id INT NOT NULL,
-    aantal INT NOT NULL DEFAULT 1,
-    prijs DECIMAL(10,2) NOT NULL,
-    FOREIGN KEY (bestel_id) REFERENCES Bestelling(bestel_id),
-    FOREIGN KEY (product_id) REFERENCES Producten(product_id)
+    BestelregelId INT AUTO_INCREMENT PRIMARY KEY,
+    BestelId INT NOT NULL,
+    ProductId INT NOT NULL,
+    Aantal INT NOT NULL DEFAULT 1,
+    Prijs DECIMAL(10,2) NOT NULL,
+    FOREIGN KEY (BestelId) REFERENCES Bestelling(BestelId),
+    FOREIGN KEY (ProductId) REFERENCES Producten(ProductId)
 );
