@@ -1,0 +1,45 @@
+﻿@page
+@model KE03_INTDEV_SE_1_Base.Pages.BestellingenModel
+@{
+	ViewData["Title"] = "Bestellingen";
+}
+
+<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+
+<h2>@ViewData["Title"]</h2>
+
+@if (!Model.Orders.Any())
+{
+	<div class="no-order">Geen bestellingen gevonden.</div>
+}
+else
+{
+	<div class="bestellingen-lijst">
+		@foreach (var order in Model.Orders)
+		{
+			<div class="bestelling">
+				<p class="bestelling-info">
+					<strong>Order ID:</strong> @order.Id &nbsp;
+					<strong>Datum:</strong> @order.OrderDate.ToShortDateString() &nbsp;
+					<strong>Aantal producten in bestelling:</strong> @order.OrderProducts.Count()
+				</p>
+				@if (order.OrderProducts.Any())
+				{
+					<ul class="producten-lijst">
+						@foreach (var op in order.OrderProducts)
+						{
+							<li>
+								@op.Product.Name -
+								<span class="prijs">&euro;@op.Product.Price.ToString("F2")</span>
+							</li>
+						}
+					</ul>
+				}
+				else
+				{
+					<p><em>Geen producten in de bestelling.</em></p>
+				}
+			</div>
+		}
+	</div>
+}

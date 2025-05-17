@@ -45,5 +45,15 @@ namespace DataAccessLayer.Repositories
             _context.Orders.Update(order);
             _context.SaveChanges();
         }
+
+        public async Task<IEnumerable<Order>> GetOrdersByCustomerNameAsync(string customerName)
+        {
+            return await _context.Orders
+            .Include(o => o.Customer)
+            .Include(o => o.OrderProducts)
+                .ThenInclude(op => op.Product)
+            .Where(o => o.Customer.Name == customerName)
+            .ToListAsync();
+        }
     }
 }
