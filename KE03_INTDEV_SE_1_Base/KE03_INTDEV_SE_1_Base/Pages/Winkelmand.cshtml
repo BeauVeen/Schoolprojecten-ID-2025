@@ -4,3 +4,69 @@
 	ViewData["Title"] = "Winkelmand";
 }
 <h2>Winkelmand</h2>
+
+@if (TempData["SuccessMessage"] != null)
+{
+	<div class="success">@TempData["SuccessMessage"]</div>
+}
+
+@if (TempData["ErrorMessage"] != null)
+{
+	<div class="error">@TempData["ErrorMessage"]</div>
+}
+
+@if (!Model.WinkelmandItems.Any())
+{
+	<p>Je Winkelmand is leeg.</p>
+}
+else
+{
+	<table class="order-table">
+		<thead>
+			<tr>
+				<th>Product</th>
+				<th>Prijs per stuk</th>
+				<th>Aantal</th>
+				<th>Subtotaal</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var item in Model.WinkelmandItems)
+			{
+				<tr>
+					<td class="product-naam-cell">
+						<form method="post" asp-page-handler="RemoveFromCart" style="display:inline;">
+							<input type="hidden" name="productId" value="@item.Product.Id"/>
+							<button type="submit" class="delete-button">Verwijder</button>
+						</form>
+						<span class="product-naam">@item.Product.Name</span>
+					</td>
+					<td>&euro;@(item.Product.Price.ToString("F2"))</td>
+					<td>
+						<form method="post" asp-page-handler="DecreaseQuantity" style="display:inline;">
+							<input type="hidden" name="productId" value="@item.Product.Id" />
+							<button type="submit" class="quantity-button">-</button>
+						</form>
+
+						<span class="aantal-weergave">@item.Aantal</span>
+
+						<form method="post" asp-page-handler="IncreaseQuantity" style="display:inline;">
+							<input type="hidden" name="productId" value="@item.Product.Id" />
+							<button type="submit" class="quantity-button">+</button>
+						</form>
+					</td>
+					<td>&euro;@((item.Product.Price * item.Aantal).ToString("F2"))</td>
+				</tr>
+			}
+		</tbody>
+		<tfoot>
+			<tr>
+				<td colspan="3"><strong>Totaal</strong></td>
+				<td><strong>&euro;@($"{Model.TotaalPrijs:F2}")</strong></td>
+			</tr>
+		</tfoot>
+	</table>
+	<form method="post" asp-page-handler="PlaceOrder">
+		<button type="submit" class="order-button">Bestellen</button>
+	</form>
+}

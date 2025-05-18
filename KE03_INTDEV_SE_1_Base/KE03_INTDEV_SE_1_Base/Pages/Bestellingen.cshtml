@@ -8,6 +8,16 @@
 
 <h2>@ViewData["Title"]</h2>
 
+@if (TempData["SuccessMessage"] != null)
+{
+	<div class="success">@TempData["SuccessMessage"]</div>
+}
+
+@if (TempData["ErrorMessage"] != null)
+{
+	<div class="error">@TempData["ErrorMessage"]</div>
+}
+
 @if (!Model.Orders.Any())
 {
 	<div class="no-order">Geen bestellingen gevonden.</div>

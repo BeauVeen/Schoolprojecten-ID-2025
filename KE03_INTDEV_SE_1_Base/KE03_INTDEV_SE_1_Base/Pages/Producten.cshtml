@@ -4,4 +4,34 @@
 	ViewData["Title"] = "Producten";
 }
 
-<h2>Producten</h2>
+<h2>@ViewData["Title"]</h2>
+
+@if (TempData["SuccessMessage"] != null)
+{
+	<div class="alert success-alert">@TempData["SuccessMessage"]</div>
+}
+
+@if (!Model.Products.Any())
+{
+	<p>Geen producten beschikbaar.</p>
+}
+else
+{
+	<div class="producten-grid">
+		@foreach (var product in Model.Products)
+		{
+			<div class="product-card">
+				<div class="product-content">
+					<h3>@product.Name</h3>
+					<p>@product.Description</p>
+					<p class="product-prijs">&euro;@product.Price.ToString("F2")</p>
+				</div>
+
+				<form method="post" asp-page-handler="AddToCart">
+					<input type="hidden" name="productId" value="@product.Id" />
+					<button type="submit" class="add-button">Toevoegen aan winkelmand</button>
+				</form>
+			</div>
+		}
+	</div>
+}
