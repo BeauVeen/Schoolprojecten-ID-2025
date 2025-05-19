@@ -24,10 +24,6 @@ packages/
 *.db
 *.log
 
-# EF Core migrations / local database
-Migrations/
-*.db
-
 # User-specific files
 *.rsuser
 *.psess
@@ -67,3 +63,7 @@ coverage/
 # Ignore other system files
 .DS_Store
 Thumbs.db
+
+# Negeer SQLite DB-bestanden (bijv. tijdens testen)
+*.db
+!DataAccessLayer/Migrations/
