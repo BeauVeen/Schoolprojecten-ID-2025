@@ -3,13 +3,13 @@ USE matrixdb;
 CREATE TABLE Gebruiker (
     UserId INT AUTO_INCREMENT PRIMARY KEY,
     Wachtwoord CHAR(60) NOT NULL,
-    Actief BOOLEAN NOT NULL DEFAULT TRUE,
+    Rol VARCHAR(20),
     Naam VARCHAR(100) NOT NULL,
     Adres VARCHAR(255),
     Postcode VARCHAR(20),
     Woonplaats VARCHAR(100),
     Telefoon VARCHAR(20),
-    Email VARCHAR(100)
+    Email VARCHAR(100) UNIQUE
 );
 
 CREATE TABLE Categorie (
